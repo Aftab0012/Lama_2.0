@@ -12,6 +12,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { sidebarLinks } from '@/constants';
 import { usePathname } from 'next/navigation';
+import '../../../styles/customStyles.css';
 
 const NavContent = () => {
   const pathname = usePathname();
@@ -68,13 +69,14 @@ const MobileNav = () => {
       >
         <Link href="/" className="flex items-center gap-1">
           <Image
-            src="/assets/images/site-logo.svg"
-            height={23}
-            width={23}
+            src="/assets/images/lama.png"
+            className="mr-1 Brand-logo"
+            height={30}
+            width={30}
             alt="DevOverflow"
           />
-          <p className="h2-bold text-dark100_light900 font-spaceGrotesk">
-            Dev <span className="text-primary-500">Overflow</span>
+          <p className="font-sans text-[26px] h1-bold text-blue-700 dark:text-yellow-400">
+            LAMA
           </p>
         </Link>
 
