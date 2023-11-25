@@ -30,8 +30,8 @@ const LeftSideBar = () => {
               className={`${
                 isActive
                   ? 'bg-[#7e22ce] dark:bg-gradient rounded-full text-light-900'
-                  : 'text-dark300_light900'
-              }  flex items-center justify-start gap-4 bg-transparent p-4`}
+                  : 'bg-transparent text-dark300_light900'
+              }  flex items-center justify-start gap-4 p-4`}
             >
               <div className="bg-[#211935] rounded-full p-2">
                 <Image
@@ -42,7 +42,6 @@ const LeftSideBar = () => {
                   className={``}
                 />
               </div>
-
               <p
                 className={`${
                   isActive ? 'base-bold' : 'base-medium'
