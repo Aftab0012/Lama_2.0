@@ -13,9 +13,12 @@ const LeftSideBar = () => {
       className="background-light900_dark200 light-border custom-scrollbar
       sticky left-0 top-0 flex h-screen flex-col justify-between
       overflow-y-auto border-r p-6 pt-36 shadow-light-300
-      dark:shadow-none max-md:hidden lg:w-[266px]"
+      dark:shadow-none max-lg:hidden lg:w-[266px]"
     >
       <div className="flex flex-col flex-1 gap-6">
+        <p className="pl-4 font-light text-dark300_light900">
+          Podcast Upload Flow
+        </p>
         {sidebarLinks.map((item) => {
           const isActive =
             (pathname.includes(item.route) && item.route.length > 1) ||
@@ -26,17 +29,20 @@ const LeftSideBar = () => {
               href={item.route}
               className={`${
                 isActive
-                  ? 'primary-gradient dark:bg-gradient rounded-lg text-light-900'
+                  ? 'bg-[#7e22ce] dark:bg-gradient rounded-full text-light-900'
                   : 'text-dark300_light900'
               }  flex items-center justify-start gap-4 bg-transparent p-4`}
             >
-              <Image
-                src={item.imgURL}
-                height={20}
-                width={20}
-                alt={item.label}
-                className={`${isActive ? '' : 'invert-colors'}`}
-              />
+              <div className="bg-[#211935] rounded-full p-2">
+                <Image
+                  src={item.imgURL}
+                  height={20}
+                  width={20}
+                  alt={item.label}
+                  className={``}
+                />
+              </div>
+
               <p
                 className={`${
                   isActive ? 'base-bold' : 'base-medium'

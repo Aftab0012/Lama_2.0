@@ -9,7 +9,7 @@ export default function Home() {
         <h1 className="h1-bold text-dark100_light900">All Projects</h1>
         <div className="flex justify-end max-sm:w-full">
           <Link href={'/create-project'}>
-            <Button className="primary-gradient min-h-[46px] px-4 py-3 text-lg font-bold !text-light-900">
+            <Button className="bg-[#7e22ce] min-h-[46px] px-4 py-3 text-lg font-bold !text-light-900">
               Create a Project
             </Button>
           </Link>

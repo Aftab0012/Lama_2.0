@@ -20,9 +20,9 @@ const TableData = ({ data, backendURL, fetchData }) => {
   };
 
   return (
-    <div>
-      <table className="border max-sm:hidden w-[590px] lg:w-[795px] background-light900_dark300 text-dark400_light700 dark:border-gray-600">
-        <thead className="bg-gray-200 dark:bg-gray-800">
+    <div className="border dark:border-black rounded-xl">
+      <table className="border-black-2 max-sm:hidden w-[630px] xl:w-[795px] text-dark400_light700">
+        <thead className="dark:bg-gray-800">
           <tr>
             <th className="px-4 py-2 border-b dark:border-gray-600">Name</th>
             <th className="px-4 py-2 border-b dark:border-gray-600">
@@ -37,7 +37,7 @@ const TableData = ({ data, backendURL, fetchData }) => {
           {data.map((item) => (
             <tr
               key={item._id}
-              className="text-center hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="text-center border-b-2 dark:border-gray-500 hover:bg-gray-100 dark:hover:bg-gray-700"
             >
               <td className="px-4 py-2 border-b dark:border-gray-600">
                 {item.name}

@@ -1,8 +1,7 @@
 'use client';
 
-import validateForm from '@/utils/formValidations';
+import { validateForm } from '@/utils/formValidations';
 import axios from 'axios';
-import Link from 'next/link';
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
