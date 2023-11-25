@@ -13,6 +13,8 @@ import { Button } from '@/components/ui/button';
 import { sidebarLinks } from '@/constants';
 import { usePathname } from 'next/navigation';
 import '../../../styles/customStyles.css';
+import { logout } from '@/utils/logout';
+import { useRouter } from 'next/navigation';
 
 const NavContent = () => {
   const pathname = usePathname();
@@ -51,6 +53,15 @@ const NavContent = () => {
 };
 
 const MobileNav = () => {
+  const isLoggedIn = localStorage.getItem('username');
+  const router = useRouter();
+
+  const handleLogout = () => {
+    console.log('logout in progress.....');
+    logout();
+    router.push('/sign-in');
+  };
+
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -85,29 +96,43 @@ const MobileNav = () => {
             <NavContent />
           </SheetClose>
 
-          <div className="flex flex-col gap-3">
-            <SheetClose asChild>
-              <Link href="/sign-in">
+          {isLoggedIn ? (
+            <div className="pb-3">
+              <SheetClose asChild>
                 <Button
                   className="small-medium btn-secondary
-                  min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none"
+                    min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none"
+                  onClick={handleLogout}
                 >
-                  <span className="primary-text-gradient">Log In</span>
+                  <span className="primary-text-gradient">Logout</span>
                 </Button>
-              </Link>
-            </SheetClose>
+              </SheetClose>
+            </div>
+          ) : (
+            <div className="flex flex-col gap-3">
+              <SheetClose asChild>
+                <Link href="/sign-in">
+                  <Button
+                    className="small-medium btn-secondary
+            min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none"
+                  >
+                    <span className="primary-text-gradient">Log In</span>
+                  </Button>
+                </Link>
+              </SheetClose>
 
-            <SheetClose asChild>
-              <Link href="/sign-up">
-                <Button
-                  className="small-medium light-border-2 btn-tertiary
-                  text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none"
-                >
-                  Sign Up
-                </Button>
-              </Link>
-            </SheetClose>
-          </div>
+              <SheetClose asChild>
+                <Link href="/sign-up">
+                  <Button
+                    className="small-medium light-border-2 btn-tertiary
+            text-dark400_light900 min-h-[41px] w-full rounded-lg px-4 py-3 shadow-none"
+                  >
+                    Sign Up
+                  </Button>
+                </Link>
+              </SheetClose>
+            </div>
+          )}
         </div>
       </SheetContent>
     </Sheet>

@@ -12,18 +12,31 @@ export const sidebarLinks = [
   },
   {
     imgURL: '/assets/icons/users.svg',
-    route: '/community',
-    label: 'Community',
+    route: '/workspace',
+    label: 'Project',
   },
-
   {
     imgURL: '/assets/icons/user.svg',
     route: '/profile',
     label: 'Profile',
   },
+];
+
+export const mediaTypes = [
   {
-    imgURL: '/assets/icons/question.svg',
-    route: '/ask-question',
-    label: 'Ask a question',
+    imgURL: '/assets/images/youtube.png',
+    action: 'Upload',
+    description: 'Youtube video.',
   },
+  {
+    imgURL: '/assets/images/spotify.png',
+    action: 'Upload',
+    description: 'Spotify podcast.',
+  },
+  {
+    imgURL: '/assets/images/rss.png',
+    action: 'Upload',
+    description: 'RSS feed.',
+  },
+  // Add more objects as needed
 ];

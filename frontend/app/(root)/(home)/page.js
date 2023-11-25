@@ -1,8 +1,21 @@
+import CardFeed from '@/components/cards/CardFeed';
+import { Button } from '@/components/ui/button';
+
 export default function Home() {
   return (
-    <main>
-      <h1 className="h1-bold">Hello World!</h1>
-      <h2 className="">hello myself</h2>
-    </main>
+    <>
+      <div className="flex flex-col-reverse justify-between w-full gap-4 sm:flex-row sm:items-center">
+        <h1 className="h1-bold text-dark100_light900">All Projects</h1>
+        <div className="flex justify-end max-sm:w-full">
+          <Button className="primary-gradient min-h-[46px] px-4 py-3 text-lg font-bold !text-light-900">
+            Create a Project
+          </Button>
+        </div>
+      </div>
+
+      <div className="w-full px-1 mt-14">
+        <CardFeed />
+      </div>
+    </>
   );
 }

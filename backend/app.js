@@ -8,6 +8,7 @@ const authRoutes = require('./routes/authRoutes');
 const projectRoutes = require('./routes/projectRoutes');
 const formRoutes = require('./routes/generalFormRoutes');
 const passport = require('./config/passport');
+const mediaRoutes = require('./routes/mediaRoutes');
 
 const app = express();
 const PORT = 3002;
@@ -28,7 +29,7 @@ app.use(cors());
 
 //User register/login route
 app.use('/auth', authRoutes);
-// app.use(passport.initialize());
+app.use(passport.initialize());
 
 app.use(
   '/projects',
@@ -40,6 +41,12 @@ app.use(
   '/generalform',
   passport.authenticate('jwt', { session: false }),
   formRoutes
+);
+
+app.use(
+  '/media-uploads',
+  passport.authenticate('jwt', { session: false }),
+  mediaRoutes
 );
 
 app.listen(PORT, () => {

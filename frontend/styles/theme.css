@@ -202,4 +202,12 @@
       rgba(19, 22, 28, 0.7) 100%
     );
   }
+
+  .bg-gradient {
+    background: linear-gradient(
+      232deg,
+      rgba(14, 80, 179, 0.41) 0%,
+      rgba(15, 28, 57, 0.7) 100%
+    );
+  }
 }
