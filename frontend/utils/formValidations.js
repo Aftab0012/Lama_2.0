@@ -1,6 +1,8 @@
+import { toast } from 'react-toastify';
+
 const validateForm = (data) => {
   if (data.name === '') {
-    toast.warn('Username is required!', {
+    toast.warn('Media name is required!', {
       position: 'top-right',
       autoClose: 5000,
       hideProgressBar: false,

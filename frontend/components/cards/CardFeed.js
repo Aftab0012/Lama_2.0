@@ -35,7 +35,7 @@ const CardFeed = () => {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col gap-5">
       {data.length > 0 ? (
         <div className="flex-wrap gap-7 flex-center ">
           {data.map((project) => (

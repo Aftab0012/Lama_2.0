@@ -23,7 +23,7 @@ const Table = () => {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [data]);
 
   return (
     <>

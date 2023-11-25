@@ -1,5 +1,6 @@
 import CardFeed from '@/components/cards/CardFeed';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -7,9 +8,11 @@ export default function Home() {
       <div className="flex flex-col-reverse justify-between w-full gap-4 sm:flex-row sm:items-center">
         <h1 className="h1-bold text-dark100_light900">All Projects</h1>
         <div className="flex justify-end max-sm:w-full">
-          <Button className="primary-gradient min-h-[46px] px-4 py-3 text-lg font-bold !text-light-900">
-            Create a Project
-          </Button>
+          <Link href={'/create-project'}>
+            <Button className="primary-gradient min-h-[46px] px-4 py-3 text-lg font-bold !text-light-900">
+              Create a Project
+            </Button>
+          </Link>
         </div>
       </div>
 
