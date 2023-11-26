@@ -1,9 +1,20 @@
 'use client';
 
 import axios from 'axios';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-const TableData = ({ data, backendURL, fetchData }) => {
+const TableData = ({ data, backendURL }) => {
+  const [userToken, setUserToken] = useState('');
+  console.log('user state token :' + userToken);
+
+  console.log('Component rendered!');
+
+  useEffect(() => {
+    const userToken = localStorage.getItem('token');
+    console.log('user Token is :-' + userToken);
+    setUserToken(userToken);
+  }, []);
+
   // Function to format createdAt date
   const formatDate = (dateString) => {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
@@ -13,10 +24,10 @@ const TableData = ({ data, backendURL, fetchData }) => {
   const handleDelete = async (_id) => {
     const response = await axios.delete(`${backendURL}/delete/${_id}`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
+        Authorization: `Bearer ${userToken}`,
       },
     });
-    fetchData();
+    // fetchData();
   };
 
   return (

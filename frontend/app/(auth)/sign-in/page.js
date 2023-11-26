@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import Link from 'next/link';
 import { toast } from 'react-toastify';
@@ -10,7 +10,23 @@ function Register() {
   const [username, setUserName] = useState('');
   const [password, setPassword] = useState('');
   const router = useRouter();
-  const backendURL = `http://localhost:3002/auth/login`;
+  const backendURL = `https://lamarefbackend.onrender.com/auth/login`;
+
+  // =======
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const username = localStorage.getItem('username');
+    const id = localStorage.getItem('id');
+
+    // Perform actions with token, username, and id as needed
+    // For example, you can redirect the user if they are already logged in
+    if (token && username && id) {
+      router.push('/');
+    }
+  }, []);
+
+  // =======
 
   const submitForm = async (e) => {
     e.preventDefault();

@@ -1,7 +1,7 @@
 import { backendURL } from '@/utils/backendURl';
 import { validateDisplayFormInput } from '@/utils/formValidations';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 const DisplayForm = () => {
@@ -19,6 +19,8 @@ const DisplayForm = () => {
 
   const [bottonDistance, setBottomDistance] = useState();
   const [horizontalDistance, setHorizontalDistance] = useState();
+
+  const [token, setToken] = useState('');
 
   const handleColorChange1 = (e) => {
     const enteredColor = e.target.value.trim();
@@ -44,6 +46,11 @@ const DisplayForm = () => {
     setChatSize(e.target.value);
   };
 
+  useEffect(() => {
+    const userToken = localStorage.getItem('token');
+    setToken(userToken);
+  }, []);
+
   const handleSubmit = async () => {
     const formData = {
       primarycolor: primaryColor,
@@ -63,7 +70,7 @@ const DisplayForm = () => {
           formData,
           {
             headers: {
-              Authorization: `Bearer ${localStorage.getItem('token')}`,
+              Authorization: `Bearer ${token}`,
             },
           }
         );
@@ -110,7 +117,7 @@ const DisplayForm = () => {
             value={primaryColor}
             onChange={handleColorChange1}
             placeholder="Enter hex color code 1"
-            className="h-12 px-4 border border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            className="h-12 px-4 border border-none rounded text-dark400_light800 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
           />
         </div>
 
@@ -138,7 +145,7 @@ const DisplayForm = () => {
             value={fontColor}
             onChange={handleColorChange2}
             placeholder="Enter hex color code 2"
-            className="h-12 px-4 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            className="h-12 px-4 border-none rounded text-dark400_light800 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
           />
         </div>
 
@@ -156,7 +163,7 @@ const DisplayForm = () => {
         )}
       </div>
 
-      <div className="flex space-x-4">
+      <div className="flex flex-col space-x-4">
         <div className="flex flex-col">
           <div className="flex flex-col">
             <label className="pb-2 text-dark300_light900">
@@ -167,15 +174,15 @@ const DisplayForm = () => {
               value={fontSize}
               onChange={handleTextChange1}
               placeholder="Enter text value 1"
-              className="px-4 py-3 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+              className="px-4 py-3 border-none rounded text-dark400_light800 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
             />
           </div>
 
           <p>{fontSize}</p>
         </div>
 
-        <div className="flex flex-col">
-          <div className="flex flex-col">
+        <div className="flex flex-col pt-2">
+          <div className="flex relative left-[-15px] flex-col">
             <label className="pb-2 text-dark300_light900">
               Enter chat height(px).
             </label>
@@ -184,7 +191,7 @@ const DisplayForm = () => {
               value={chatSize}
               onChange={handleTextChange2}
               placeholder="Enter text value 2"
-              className="px-4 py-3 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+              className="px-4 py-3 border-none rounded text-dark400_light800 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
             />
           </div>
 
@@ -242,7 +249,7 @@ const DisplayForm = () => {
             value={bottonDistance}
             onChange={(e) => setBottomDistance(e.target.value)}
             placeholder="Enter numeric value 1"
-            className="p-2 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            className="p-2 border-none rounded focus:outline-none text-dark400_light800 focus:border-purple-500 dark:bg-gray-800"
           />
         </div>
         <p>{bottonDistance}</p>
@@ -258,7 +265,7 @@ const DisplayForm = () => {
             value={horizontalDistance}
             onChange={(e) => setHorizontalDistance(e.target.value)}
             placeholder="Enter numeric value 2"
-            className="p-2 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            className="p-2 border-none rounded focus:outline-none text-dark400_light800 focus:border-purple-500 dark:bg-gray-800"
           />
         </div>
         <p>{horizontalDistance}</p>

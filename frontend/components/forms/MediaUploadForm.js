@@ -2,14 +2,20 @@
 
 import { validateForm } from '@/utils/formValidations';
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const MediaUploadForm = ({ onClose }) => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const backendURL = `http://localhost:3002/media-uploads/add`;
+  const [token, setToken] = useState('');
+  const backendURL = `https://lamarefbackend.onrender.com/media-uploads/add`;
+
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+    setToken(storedToken);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +28,7 @@ const MediaUploadForm = ({ onClose }) => {
       try {
         const response = await axios.post(backendURL, data, {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${token}`,
           },
         });
         const dataReceived = response.data;
