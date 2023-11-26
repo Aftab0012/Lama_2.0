@@ -1,4 +1,4 @@
-const DisplayForm = require('../models/displayForm.Model');
+const DisplayForm = require('../models/displayForm.model.js');
 
 async function getFormData(req, res) {
   try {
