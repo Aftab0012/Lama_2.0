@@ -103,7 +103,7 @@ const page = () => {
           />
           <button
             onClick={updateName}
-            className="px-4 py-2 mt-4 text-dark400_light800 shadow-light100_dark100 btn-primary"
+            className="px-4 py-2 mt-4 rounded-lg background-light800_dark400 text-dark400_light800 shadow-light100_dark100 btn-primary"
           >
             Update name
           </button>
