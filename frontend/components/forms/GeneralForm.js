@@ -1,4 +1,4 @@
-// 'use client';
+'use client';
 
 import { validateUserGeneralForm } from '@/utils/formValidations';
 import { updateGeneralFormId } from '@/utils/updateGeneralFormAxiosReq';
