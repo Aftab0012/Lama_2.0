@@ -11,6 +11,12 @@ const projectSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User',
     },
+    generalFormIds: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'generalform',
+      },
+    ],
   },
   {
     timestamps: true,

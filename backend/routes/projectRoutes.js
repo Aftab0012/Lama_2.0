@@ -2,10 +2,13 @@ const express = require('express');
 const router = express.Router();
 const projectController = require('../controllers/projectController');
 
-// Route to log in a user
+// Route to get all projects
 router.get('/', projectController.getProjects);
 
-// Route to register a new user
+// Route to add a new project
 router.post('/add', projectController.addProject);
+
+// Route to update project with userGeneralForm
+router.patch('/update', projectController.updateProjectGeneralForm);
 
 module.exports = router;

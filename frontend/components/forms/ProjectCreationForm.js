@@ -26,6 +26,7 @@ const ProjectCreationForm = () => {
         });
         const dataReceived = response.data;
         console.log(dataReceived);
+        persistLogin(dataReceived);
         console.log(response.status);
         if (response.status === 201) {
           toast.success('Media Uploaded successful!', {
@@ -58,6 +59,9 @@ const ProjectCreationForm = () => {
     }
   };
 
+  const persistLogin = (dataReceived) => {
+    localStorage.setItem('projectId', dataReceived._id);
+  };
   return (
     <div className="fixed w-full max-w-sm p-6 transform -translate-x-1/2 -translate-y-1/2 bg-white h-[300px] rounded-md shadow-md top-1/2 left-1/2 dark:bg-gray-800">
       <div className="h1-bold text-dark400_light800">Create Project</div>

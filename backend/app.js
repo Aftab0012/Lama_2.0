@@ -9,6 +9,7 @@ const projectRoutes = require('./routes/projectRoutes');
 const formRoutes = require('./routes/generalFormRoutes');
 const passport = require('./config/passport');
 const mediaRoutes = require('./routes/mediaRoutes');
+const displayFormRoutes = require('./routes/displayFormRoutes');
 
 const app = express();
 const PORT = 3002;
@@ -41,6 +42,12 @@ app.use(
   '/generalform',
   passport.authenticate('jwt', { session: false }),
   formRoutes
+);
+
+app.use(
+  '/display-form',
+  passport.authenticate('jwt', { session: false }),
+  displayFormRoutes
 );
 
 app.use(

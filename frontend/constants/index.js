@@ -13,7 +13,12 @@ export const sidebarLinks = [
   {
     imgURL: '/assets/icons/users.svg',
     route: '/workspace',
-    label: 'Project',
+    label: 'Workspace',
+  },
+  {
+    imgURL: '/assets/icons/edit.svg',
+    route: '/widget-configuration',
+    label: 'Widget Configuation',
   },
   {
     imgURL: '/assets/icons/user.svg',

@@ -21,7 +21,7 @@ const TableData = ({ data, backendURL, fetchData }) => {
 
   return (
     <div className="border dark:border-black rounded-xl">
-      <table className="border-black-2 max-sm:hidden w-[630px] xl:w-[795px] text-dark400_light700">
+      <table className="border-black-2 max-sm:hidden lg:w-[735px] text-dark400_light700">
         <thead className="dark:bg-gray-800">
           <tr>
             <th className="px-4 py-2 border-b dark:border-gray-600">Name</th>

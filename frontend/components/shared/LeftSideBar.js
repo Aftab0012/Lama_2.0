@@ -13,10 +13,10 @@ const LeftSideBar = () => {
       className="background-light900_dark200 light-border custom-scrollbar
       sticky left-0 top-0 flex h-screen flex-col justify-between
       overflow-y-auto border-r p-6 pt-36 shadow-light-300
-      dark:shadow-none max-lg:hidden lg:w-[266px]"
+      dark:shadow-none max-sm:hidden lg:w-[266px]"
     >
       <div className="flex flex-col flex-1 gap-6">
-        <p className="pl-4 font-light text-dark300_light900">
+        <p className="pl-4 font-light max-lg:hidden text-dark300_light900">
           Podcast Upload Flow
         </p>
         {sidebarLinks.map((item) => {
@@ -45,7 +45,7 @@ const LeftSideBar = () => {
               <p
                 className={`${
                   isActive ? 'base-bold' : 'base-medium'
-                } max-lg:hidden`}
+                } max-lg:hidden line-clamp-1`}
               >
                 {item.label}
               </p>

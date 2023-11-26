@@ -35,9 +35,9 @@ const CardFeed = () => {
   }, []);
 
   return (
-    <div className="flex flex-col gap-5">
+    <div className="flex-center">
       {data.length > 0 ? (
-        <div className="flex-wrap gap-7 flex-center ">
+        <div className="grid w- place-items-center max-md:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-7">
           {data.map((project) => (
             <Link href={'/workspace'}>
               <ProjectCards

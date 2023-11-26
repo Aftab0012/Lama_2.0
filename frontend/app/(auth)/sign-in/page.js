@@ -23,9 +23,9 @@ function Register() {
       if (validateInput(data)) {
         const response = await axios.post(backendURL, data);
         const dataReceived = response.data;
-        console.log(dataReceived);
+
         persistLogin(dataReceived);
-        console.log(response.status);
+
         if (response.status === 200) {
           toast.success('Login successful!', {
             position: 'top-right',

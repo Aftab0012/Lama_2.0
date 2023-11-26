@@ -83,7 +83,9 @@ const page = () => {
           height={100}
         />
         <div className="pb-10 pl-6">
-          <p className="capitalize h2-bold text-dark200_light800">{username}</p>
+          <p className="capitalize max-sm:text-md sm:h2-bold text-dark200_light800">
+            {username}
+          </p>
           <p className="pt-1 text-sm text-light400_light500">@{username}</p>
         </div>
       </div>
