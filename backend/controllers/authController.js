@@ -2,7 +2,7 @@
 const User = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-// const userValSchema = require('../Validations/userValidations.js');
+const userValSchema = require('../Validations/userValidations');
 
 /**
  * Register a new user.
@@ -15,10 +15,10 @@ const registerUser = async (req, res) => {
 
   try {
     // Checking for Validations using Joi
-    // const { error } = userValSchema.validate(req.body);
-    // if (error) {
-    //   return res.status(400).json({ error: error.details[0].message });
-    // }
+    const { error } = userValSchema.validate(req.body);
+    if (error) {
+      return res.status(400).json({ error: error.details[0].message });
+    }
 
     // Taking username and password and checking if user already exists or not
     const existingUser = await User.findOne({ username });
