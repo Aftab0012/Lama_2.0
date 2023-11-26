@@ -64,7 +64,7 @@ const DisplayForm = () => {
             formData,
             {
               headers: {
-                Authorization: `Bearer ${localStorage.getItem('token')}`,
+                Authorization: `Bearer ${localStorage?.getItem('token')}`,
               },
             }
           );
