@@ -2,7 +2,7 @@
 const User = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-const userValSchema = require('../Validations/userValidations');
+const userValSchema = require('../validations/userValidations');
 
 /**
  * Register a new user.
