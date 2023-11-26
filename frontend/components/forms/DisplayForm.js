@@ -101,13 +101,19 @@ const DisplayForm = () => {
   return (
     <div className="flex flex-col flex-wrap w-full h-full space-y-4">
       <div className="flex items-center space-x-4">
-        <input
-          type="text"
-          value={primaryColor}
-          onChange={handleColorChange1}
-          placeholder="Enter hex color code 1"
-          className="h-12 px-4 border border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-        />
+        <div className="flex flex-col">
+          <label className="pb-2 text-dark300_light900">
+            Enter hex color code
+          </label>
+          <input
+            type="text"
+            value={primaryColor}
+            onChange={handleColorChange1}
+            placeholder="Enter hex color code 1"
+            className="h-12 px-4 border border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+          />
+        </div>
+
         <div
           style={{
             width: '50px',
@@ -123,13 +129,19 @@ const DisplayForm = () => {
       </div>
 
       <div className="flex items-center space-x-4">
-        <input
-          type="text"
-          value={fontColor}
-          onChange={handleColorChange2}
-          placeholder="Enter hex color code 2"
-          className="h-12 px-4 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-        />
+        <div className="flex flex-col">
+          <label className="pb-2 text-dark300_light900">
+            Enter primary color.
+          </label>
+          <input
+            type="text"
+            value={fontColor}
+            onChange={handleColorChange2}
+            placeholder="Enter hex color code 2"
+            className="h-12 px-4 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+          />
+        </div>
+
         <div
           style={{
             width: '50px',
@@ -146,76 +158,109 @@ const DisplayForm = () => {
 
       <div className="flex space-x-4">
         <div className="flex flex-col">
-          <input
-            type="text"
-            value={fontSize}
-            onChange={handleTextChange1}
-            placeholder="Enter text value 1"
-            className="px-4 py-3 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-          />
+          <div className="flex flex-col">
+            <label className="pb-2 text-dark300_light900">
+              Enter font size(px).
+            </label>
+            <input
+              type="text"
+              value={fontSize}
+              onChange={handleTextChange1}
+              placeholder="Enter text value 1"
+              className="px-4 py-3 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            />
+          </div>
+
           <p>{fontSize}</p>
         </div>
 
         <div className="flex flex-col">
-          <input
-            type="text"
-            value={chatSize}
-            onChange={handleTextChange2}
-            placeholder="Enter text value 2"
-            className="px-4 py-3 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-          />
+          <div className="flex flex-col">
+            <label className="pb-2 text-dark300_light900">
+              Enter chat height(px).
+            </label>
+            <input
+              type="text"
+              value={chatSize}
+              onChange={handleTextChange2}
+              placeholder="Enter text value 2"
+              className="px-4 py-3 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            />
+          </div>
+
           <p>{chatSize}</p>
         </div>
       </div>
 
       <div className="flex space-x-4">
         <div className="flex flex-col">
-          <select
-            value={chatIcon}
-            onChange={(e) => setChatIcon(e.target.value)}
-            className="px-4 py-2 border-none rounded text-dark400_light700 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-          >
-            <option value="small">small</option>
-            <option value="medium">medium</option>
-            <option value="large">large</option>
-          </select>
+          <div className="flex flex-col">
+            <label className="pb-2 text-dark300_light900">
+              Enter chat icon size.
+            </label>
+            <select
+              value={chatIcon}
+              onChange={(e) => setChatIcon(e.target.value)}
+              className="px-4 py-2 border-none rounded text-dark400_light700 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            >
+              <option value="small">small</option>
+              <option value="medium">medium</option>
+              <option value="large">large</option>
+            </select>
+          </div>
+
           <p>Selected Option: {chatIcon}</p>
         </div>
 
         <div className="flex flex-col">
-          <select
-            value={screenPosition}
-            onChange={(e) => setScreenPosition(e.target.value)}
-            className="px-4 py-2 border-none rounded text-dark400_light700 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-          >
-            <option value="Top right">top right</option>
-            <option value="Top left">top left</option>
-            <option value="Bottom right">bottom right</option>
-            <option value="Bottom left">bottom left</option>
-          </select>
+          <div className="flex flex-col">
+            <label className="pb-2 text-dark300_light900">
+              Position on screen.
+            </label>
+            <select
+              value={screenPosition}
+              onChange={(e) => setScreenPosition(e.target.value)}
+              className="px-4 py-2 border-none rounded text-dark400_light700 focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+            >
+              <option value="Top right">top right</option>
+              <option value="Top left">top left</option>
+              <option value="Bottom right">bottom right</option>
+              <option value="Bottom left">bottom left</option>
+            </select>
+          </div>
           <p>Selected Option: {screenPosition}</p>
         </div>
       </div>
 
       <div className="flex flex-col space-y-2">
-        <input
-          type="number"
-          value={bottonDistance}
-          onChange={(e) => setBottomDistance(e.target.value)}
-          placeholder="Enter numeric value 1"
-          className="p-2 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-        />
+        <div className="flex flex-col">
+          <label className="pb-2 text-dark300_light900">
+            Distance from bottom.
+          </label>
+          <input
+            type="number"
+            value={bottonDistance}
+            onChange={(e) => setBottomDistance(e.target.value)}
+            placeholder="Enter numeric value 1"
+            className="p-2 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+          />
+        </div>
         <p>{bottonDistance}</p>
       </div>
 
       <div className="flex flex-col space-y-2">
-        <input
-          type="number"
-          value={horizontalDistance}
-          onChange={(e) => setHorizontalDistance(e.target.value)}
-          placeholder="Enter numeric value 2"
-          className="p-2 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
-        />
+        <div className="flex flex-col">
+          <label className="pb-2 text-dark300_light900">
+            Horizontal Distance.
+          </label>
+          <input
+            type="number"
+            value={horizontalDistance}
+            onChange={(e) => setHorizontalDistance(e.target.value)}
+            placeholder="Enter numeric value 2"
+            className="p-2 border-none rounded focus:outline-none focus:border-purple-500 dark:bg-gray-800"
+          />
+        </div>
         <p>{horizontalDistance}</p>
       </div>
 

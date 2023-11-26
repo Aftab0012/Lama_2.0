@@ -23,6 +23,7 @@ function Page() {
             padding: '10px',
             backgroundColor: selectedHeader === 'General' ? '#7e22ce' : '#fff',
             color: selectedHeader === 'General' ? '#fff' : '#000',
+            borderRadius: '5px',
           }}
           onClick={() => handleHeaderClick('General')}
         >
@@ -34,6 +35,7 @@ function Page() {
             padding: '10px',
             backgroundColor: selectedHeader === 'Display' ? '#7e22ce' : '#fff',
             color: selectedHeader === 'Display' ? '#fff' : '#000',
+            borderRadius: '5px',
           }}
           onClick={() => handleHeaderClick('Display')}
         >

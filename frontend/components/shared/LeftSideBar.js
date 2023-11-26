@@ -29,7 +29,7 @@ const LeftSideBar = () => {
               href={item.route}
               className={`${
                 isActive
-                  ? 'bg-[#7e22ce] dark:bg-gradient rounded-full text-light-900'
+                  ? 'bg-[#7e22ce] dark:bg-gradient rounded-xl text-light-900'
                   : 'bg-transparent text-dark300_light900'
               }  flex items-center justify-start gap-4 p-4`}
             >

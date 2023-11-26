@@ -20,7 +20,7 @@ const MediaCardFeed = () => {
     <>
       <div className="flex-row flex-wrap gap-3 px-4 pb-4 flex-center">
         {mediaTypes.map((media) => (
-          <div key={media.action} onClick={openForm}>
+          <div key={media.action} className="cursor-pointer" onClick={openForm}>
             <MediaCards
               img={media.imgURL}
               action={media.action}
